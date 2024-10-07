@@ -3,7 +3,7 @@
 
 ```diff
 - 🛑 IMPORTANT: DO NOT CHANGE ANY OF THIS SINCE ITS CRUCIAL FOR THE PROJECT.
-! balbert.etraid@grupoetra.com is the mantainers of this repository.
+! balbert.etraid@grupoetra.com is the mantainer of this repository.
 ```
 
 #### HDT (Human Digital Twin)
