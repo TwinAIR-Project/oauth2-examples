@@ -1,6 +1,11 @@
 ### oauth2-examples
 > Code repository showcasing oauth2 authentication protocol against the Keyrock (TwinAIR identity provider)
 
+```diff
+- 🛑 IMPORTANT: DO NOT CHANGE ANY OF THIS SINCE ITS CRUCIAL FOR THE PROJECT.
+! balbert.etraid@grupoetra.com is the mantainers of this repository.
+```
+
 #### HDT (Human Digital Twin)
 > Done in the flask framework based on python
 
