@@ -3,6 +3,7 @@ from authlib.integrations.flask_client import OAuth
 import os
 import uuid
 import requests
+
 # Create Flask app
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Used for securely signing the session
@@ -29,6 +30,7 @@ def home():
     email = dict(session).get('email', None)
     return f'Hello, {email}! <a href="/login">Login</a>' if not email else f'Welcome back, {email}! <a href="/logout">Logout</a>'
 
+print(keyrock)
 # Login route
 @app.route('/login')
 def login():
@@ -41,6 +43,7 @@ def login():
 
     return keyrock.authorize_redirect(
         redirect_uri,
+        prompt='login',
         state=session['state'],
         nonce=session['nonce']
     )
@@ -86,8 +89,8 @@ def logout():
     logout route which clears the session and redirects to the home page
     """
     session.clear()
-    return redirect(url_for('home'))
-
+    request_url = f"{os.getenv('OAUTH2_LOGOUT_URL')}?_method=DELETE&client_id={os.getenv('OAUTH2_CLIENT_ID')}" 
+    return redirect(request_url)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5656)
